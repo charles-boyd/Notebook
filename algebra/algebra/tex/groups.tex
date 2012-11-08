@@ -1,0 +1,31 @@
+\begin{section}{Group Theory}
+
+We quickly construct the first isomorphism theorem for groups as a point of reference.
+
+\begin{defn}
+  A map $f \colon G \to H$ between groups $G$ and $H$ which preserves the group structure under the induced operation (denoted multiplicatively) is a {\bf group homomorphism} if and only if 
+  $$f(xy) = f(x)f(y), \, \forall x,y \in G.$$
+\end{defn}
+
+\begin{defn}
+  The {\bf kernel} of a group homomorphism $f \colon G \to H$ is the set of elements in $G$ mapped to the identity element in $H$ by $f$, denoted by
+  $$\text{Ker}(f) = \{x \in G \colon f(x) = 0 \}.$$
+\end{defn}
+
+\begin{defn}
+  A subgroup $H$ of a group $G$ is a {\bf normal subgroup} if and only if every element in $H$ is invariant under conjugation by elements of $G$. That is,
+  $$H \triangleleft G \iff ghg^{-1} \in H, \, \forall h \in H, g \in G.$$
+\end{defn}
+
+\begin{prop}
+  The kernel of a group homomorphism $f \colon G \to H$ is always a normal subgroup of $G$.
+\end{prop}
+
+This brings us to a statement of the {\bf First Isomorphism Theorem}.
+
+\begin{thm}
+  Let $f \colon G \to H$ be a group homomorphism with $\text{Ker}(f) = K$. Then,
+  $$G/K \simeq f(G).$$
+\end{thm}
+
+\end{section}

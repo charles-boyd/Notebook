@@ -1,0 +1,89 @@
+
+\begin{section}{Morphisms of Rings}
+
+\begin{defn}
+A {\bf morphism of rings} (or ``ring homomorphism'') is a function $\phi \colon R \to R'$ which maps elements of the ring $R$ to its image in $R'$ which is a morphism of addition $\phi(a+b) = \phi(a) + \phi(b)$, multiplication $\phi(ab) = \phi(a)\phi(b)$ and unit $\phi(1) = 1'$.
+\end{defn}
+
+\begin{defn}
+A morphism $\phi$ of rings is called a {\bf monomorphism} when the function $\phi$ is injective, an {\bf epimorphism} when the function $\phi$ is surjective or an {\bf isomorphism} when the function $\phi$ is bijective. 
+\end{defn}
+
+\begin{danger}
+We distinguish between a morphism and a function because they are different things in principal (but effectively the same in practice). A morphism is a structure preserving map between algebraic systems, while a function is a map between the underlying sets. In the category of sets, the morphisms are precisely functions so this is technically the only place where it is appropriate to use morphism and function synonymously.
+\end{danger} 
+
+\begin{ex}
+\begin{enumerate}[(a)]
+\item The insertions $\mathbb{Z} \hookrightarrow \mathbb{Q} \hookrightarrow \mathbb{C}$ are monomorphisms of rings.
+\item The reduction of integers modulo a prime $p$ given by $\rho \colon \mathbb{Z} \to \mathbb{Z}_{p}$ is an epimorphism of rings.
+\item The identity map $\textrm{Id}_{R} \colon R \to R$ is an isomorphism of rings.
+\item The projection map $\pi \colon R_1 \times R_2 \to R_1$ is an epimorphism of rings.
+\end{enumerate}
+\end{ex}
+
+\begin{prop}
+For each ring $R'$ there is exactly one morphism $\mu \colon \mathbb{Z} \to R'$, known as the ``unital morphism''.
+\end{prop}
+
+\begin{proof}
+Since every element in the ring $\mathbb{Z}$ is some multiple of $1$, that is, $n = n * 1 = \sum^{n} 1$, the only possible function for the morphism $\mu$ is $\mu(n) = n1'$. Then clearly $\mu$ is a morphism of addition and unit. We must check that $\mu$ is also a morphism of multiplication
+ $$(m1')(n1') = (mn)1', \textrm{ for } n,m \in \mathbb{Z}.$$
+
+This condition clearly holds when $m = 0$, then by induction assume that it holds when $m > 0$ for all $n$. Then 
+$$((m+1)1')(n1') = (m1' + 11')(n1') = (m1')(n1') + n1' = (mn +n)1' = ((m+1)n)1'.$$
+
+So the condition that $\mu$ is a morphism of multiplication holds for $m+1$ and therefore for all $m \geq 0$ and the induction is complete. It is easy to check that this condition also holds when $m < 0$ by applying the identity $a(-b) = (-a)b = -(ab)$ which follows immediately from the distributivity axiom for rings.
+\end{proof}
+
+\begin{prop}
+Let $\phi \colon R \to R'$ be a morphism of rings, and let $S \subset R$ be a subring. Then $\phi(S) \subset R'$ is a subring and $\phi^{-1}(S') \subset R$ if $S' \subset R'$ is a subring.
+\end{prop}
+
+\begin{proof}
+  Take $a,b \in \phi(R')$ such that $a = \phi(x), b = \phi(y)$ for some $x,y \in R'$. Then $$\phi(x+y) = \phi(x) + \phi(y) = a + b \in \phi(R').$$ Similarly,
+  $$\phi(xy) = \phi(x)\phi(y) = ab \in \phi(R').$$
+
+  Since $\phi(R') \subset R$ satisfies the axioms of a ring homomorphism, then we have $\phi(R')$ is a subring of $R$.
+\end{proof}
+
+\begin{defn}
+Let $\phi \colon R \to R'$ be a morphism of rings, then the {\bf kernel} of the morphism is the set $$\textrm{Ker}(\phi) = \{a \in R \colon \phi(a) = 0\}.$$
+\end{defn}
+
+\begin{rmk}
+The set $\textrm{Ker}(\phi)$ is just the kernel of $\phi$ as a morphism of additive groups. That is, $\phi(r) = \phi(s)$ for $r,s \in R$ if and only if $r - s \in \textrm{Ker}(\phi)$. It is then useful to notice what sorts of subsets of $R$ can be kernels. Additionally, the kernel of a morphism can be used to measure the extent to which a morphism fails to be a monomorphism. That is, the size of the kernel depends on how frequently the function $\phi(r)$ fails to be injective. 
+\end{rmk}
+
+\begin{prop}
+  $\textrm{Ker}(\phi) = \{0\}$ if and only if $\phi$ is a monomorphism.
+\end{prop}
+
+\begin{prop}
+  Let $f \colon R \to S$ be a ring homomorphism, then $\textrm{Ker}(f) = \{ x \in R \colon f(x) = 0 \}$. Ignoring multiplication for the moment, we know that $K = \text{Ker}(f)$ is an Abelian subgroup of $(R,+)$. 
+
+  Then by the First Isomorphism Theorem (for Groups), $R/K = \{ a + K \colon a \in R \}$ is also an Abelian group and $R/K \simeq f(R)$.
+\end{prop}
+
+\begin{rmk}
+Now, what can we say about the kernel $K$ from the perspective of multiplication? Take $x,y \in K$, then obviously $f(x) = f(y) = 0$. Then by the closure axiom for Rings, we must also have $xy \in K$ which implies $f(xy) = f(x)f(y) = 0$. Therefore, $f$ must also preserve multiplication in $K$ -- meaning that $K$ is a subring of $R$.
+\end{rmk}
+
+\begin{prop}
+  The kernel $\textrm{Ker}(\phi)$ of a morphism $\phi \colon R \to R'$ of rings is a subring of $R$.
+\end{prop}
+
+\begin{thm}
+Let $\phi \colon R \to R'$ be a morphism of rings, and let $H = \textrm{Ker}(\phi)$. Then for $a \in R$,  $$\phi^{-1}(\phi(a)) = a + H = H + a,$$ where $a + H = H + a$ is the coset containing $a$ of the additive group $(R,+)$.
+\end{thm}
+
+
+\begin{ex}
+\begin{enumerate}[(a)]
+\item If $R'$ has characteristic $0$, then the unital morphism $\mu \colon \mathbb{Z} \to R'$ is a monomorphism of rings.
+\item If $R'$ has characteristic $m$, thenthere exists a monomorphism $\nu \colon \mathbb{Z}_{m} \to R'$ such that $\nu(m\mathbb{Z} + k) = \mu(k) = k1'$. Note that the order of every element of the additive group $R'$ is a divisor of $m$.
+\end{enumerate}
+\end{ex}
+
+\end{section}
+

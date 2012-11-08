@@ -1,0 +1,93 @@
+\begin{section}{Rings and Fields}
+
+We quickly provide basic definitions and facts about rings and fields.
+
+\begin{defn}
+A {\bf semi-ring} is a set $R$ equipped with two binary operations $"+"$ (addition) and $"\cdot"$ (multiplication) obeying the following axioms.
+\begin{enumerate}[(a)]
+\item $R$ is an Abelian group under addition.
+\item $R$ is an semi-group under multiplication.
+\item Multiplication is (left and right) distributive over addition.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+A {\bf ring} (or {\em ring with unity}) $R$ is a semi-ring which is a monoid under multiplication. That is, $R$ contains a multiplicative identity element $1 \in R$ such that for any $a \in R$ we have $a1 = 1a = a$.
+\end{defn}
+
+\begin{danger}
+Most of our theorems about rings generalize to semi-rings, so we will usually make no distinction between the two unless it is necessary. As we will see, most of the rings we are interested in studying have a multiplicative identity element. In general, we also assume that $1 \neq 0$ in any ring.
+\end{danger}
+
+\begin{prop}
+Let $R$ be a ring and define the set of square matricies $M_{n}(R)$ with coefficients in $R$, then $M_{n}(R)$ is itself a ring under matrix addition and multiplication.
+\end{prop}
+
+\begin{defn}
+A {\bf commutative ring} is a ring $R$ where multiplication is commutative. That is, $ab = ba$ for all $a,b \in R$.
+\end{defn}
+
+\begin{ex}
+\begin{enumerate}[(a)]
+\item $\mathbb{Z}$, $n\mathbb{Z}$, $\mathbb{Z}_{n}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are commutative rings.
+\item For any ring $R$, the ring of matricies $M_{n}(R)$ is a ring which is not commutative.
+\item For any ring $R$, the direct product $R \times R \times \dots \times R$ is a ring.
+\item If $R$ is a commutative ring, then the direct product $R \times R \times \dots \times R$ is a commutative ring.
+\end{enumerate}
+\end{ex}
+
+\begin{defn}
+Any nonzero elements $a,b \in R$ in a ring are called {\bf divisors of zero} if $ab = 0$.
+\end{defn}
+
+\begin{ex}
+The divisors of zero in the ring $Z_{n}$ are the elements coprime to $n$.
+\end{ex}
+
+\begin{defn}
+An {\bf integral domain} $D$ is a commutative ring which does not contain divisors of zero.
+\end{defn}
+
+\begin{defn}
+A an element $u \in R$ is called a {\bf unit} if it has a multiplicative inverse $u^{-1} \in R$.
+\end{defn}
+
+\begin{prop}
+Let $R$ be a ring where multiplicative inverses exist for all nonzero elements $a \in R$. Then the set $R/\{0\}$ is a group under the induced multiplication.
+\end{prop}
+
+\begin{defn}
+A ring $R$ in which every nonzero element has a multiplicative inverse is called a {\bf division ring}.
+\end{defn}
+
+\begin{defn}
+A commutative division ring $R$ is a {\bf field}.
+\end{defn}
+
+\begin{prop}
+Every field $F$ is an integral domain.
+\end{prop}
+
+\begin{prop}
+Every finite integral domain is a field.
+\end{prop}
+
+\begin{ex}
+\begin{enumerate}[(a)]
+\item $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are fields.
+\item $\mathbb{Z}$ and $\mathbb{Z}_{n}$ are integral domains, but are {\em not} fields.
+\item $\mathbb{Z}_{p}$ for prime $p$ is a field.
+\item The quaternions $\mathbb{H}$ are not a field, since multiplication is not commutative\footnote{Fact: Polynomials over the field $\mathbb{H}$ can have more solutions than their degree.}. (They are, however, a ``division algebra'' over the field $\mathbb{R}^{4}$.)
+\end{enumerate}
+\end{ex}
+
+\begin{defn}
+The {\bf characteristic} of a ring $R$ is the (additive) order of its unit $1 \in R$. If there exists some (least) positive integer $m$ such that $m1 = 0$, then $R$ has characteristic $m$. Otherwise, $R$ has characteristic $0$.
+\end{defn}
+
+\begin{ex}
+$\mathbb{Z}$ has characteristic $0$, while $\mathbb{Z}_{n}$ has characteristic $n$.
+\end{ex}
+
+
+\end{section}

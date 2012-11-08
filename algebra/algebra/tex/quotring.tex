@@ -1,0 +1,66 @@
+\begin{section}{Quotient Rings and Ideals}
+
+As we have seen with groups, the kernel $N$ of a group homomorphism $G \to G'$ is a ``normal subgroup'' of $G$ such that we can form a ``quotient group'' $G/N$ and construct a natural isomorphism $G \to G/N$. Here we deevelop an analogous notion for natural isomorphisms between ring structures.
+
+Recall from group theory that every subgroup of an Abelian group is a normal subgroup.
+
+\begin{prop}
+Let $\phi \colon R \to R'$ be a morphism of rings with $\textrm{Ker}(\phi) = H$. Then the additive cosets of $H$ form a ring $R/H$ whose binary operations are defined by choosing representatives. That is, 
+$$(a + H) + (b + H) = (a + b) + H \textrm{ and},$$
+$$(a + H)(b + H) = (ab) + H.$$
+\end{prop}
+
+\begin{prop}
+Let $H \subset R$ be a subring, then multiplication of additive cosets in $R/H$ is well defined by the above proposition if and only if 
+$$ah \in H \textrm{ and } hb \in H, \textrm{ for all } a,b \in R \textrm{ and } h \in H.$$
+\end{prop}
+
+\begin{defn}
+  An {\bf Ideal} $I$ in a ring $R$ is an additive subgroup of $R$ such that $$x \in R, y \in I \implies xy \in I.$$
+\end{defn}
+
+\begin{rmk}
+An equivalent definition of an ideal is a nonempty subset $I \subset R$ with:
+\begin{enumerate}[(a)]
+\item $a_{1},a_{2} \in I \implies (a_{1} - a_{2}) \in I.$
+\item $r \in R, a \in I \implies ra \in I \textrm{ and } ar \in I.$ 
+\end{enumerate}
+In other words, an ideal is an {\em additive subgroup} of $R$ which is {\em closed under ``multiply by $r \in R$ on both sides''}. 
+\end{rmk}
+
+\begin{ex}
+Some examples of ideals.
+\begin{enumerate}[(a)]
+\item $n\mathbb{Z} \subset \mathbb{Z}$, since by definition $n \in \mathbb{Z}, k \in p\mathbb{Z} \implies nk \in p\mathbb{Z}.$
+\item Observe that the set of all functions $f \colon \mathbb{R} \to \mathbb{R}$, denoted by $\Hom(\mathbb{R},\mathbb{R})$, is a ring. Then the subring
+$N = \{f \in \Hom(\mathbb{R},\mathbb{R}) \colon f(2) = 0\}$ is an ideal since for $f,g \in N \subset \Hom(\mathbb{R},\mathbb{R})$ we have $fg(2) = f(2)g(2) = 0g(2) = 0$ so $fg \in N$.
+\item $\mathbb{Q} \subset \mathbb{R}$ is an ideal.
+\item   In a commutative ring $R$, the set $ \<b\> = \{rb \colon r \in R\}$ of all ``multiples'' of a fixed element $b$ in $R$ is an ideal in $R$. This is an example of a ``principal'' ideal.
+\end{enumerate}
+\end{ex}
+
+\begin{prop}
+  In general, if $f \colon R \to S$ is a ring homomorphism with $K = \text{Ker}(f)$, then $K$ is an ideal of $R$. This is also easy to check, since for $x \in R, y \in K$, 
+  $$ f(xy) = f(x)f(y) = f(x)*0 = 0 \implies xy \in K.$$
+\end{prop}
+
+\begin{prop}
+Given an ideal $N \subset R$ of a ring, then multiplication of the (additive) cosets of $N$ is well-defined and $R/N$ is a quotient ring. Conversely, if $R/N$ is a quotient ring, then $N$ is an ideal of $R$.
+\end{prop}
+
+This brings us to a statement the {\bf First Isomorphism Theorem for Rings}.
+
+\begin{thm}
+Let $\phi \colon R \to R'$ be a morphism of rings with $\ker(\phi) = N$. Then $\phi(R)$ is a ring and the morphism $\psi \colon R/N \to \phi(R)$ given by $\psi(x + N) = \phi(x)$ is an isomorphism. If $\gamma \colon R \to R/N$ is the morphism given by $\gamma(x) = x + N$, then we have $\phi(x) = \psi \circ \gamma$. That is, $$R/N \iso \phi(R).$$
+\end{thm}
+
+\begin{rmk}
+It would be very strange (although certainly possible) to have the multiplicative identity $1 \in \text{Ker}(f)$ where $f \colon R \to S$ is a morphism of rings, since this would mean
+$$f(x) = f(x*1) = f(x)f(1) = f(x)*0 = 0 \implies f(R) = 0.$$
+\end{rmk}
+
+\begin{danger}
+This actually violates our definition of a morphism of rings as a morphism of unit, but we will allow this for now. Strictly speaking, we should either equip the definition of a ring with a nullary operation ``selection of unit'' or drop the requirement that a morphism of rings is a morphism of unit. If we {\em do} drop this requirement, then the set of all positive integers is a ring (but otherwise it is not).
+\end{danger}
+
+\end{section}

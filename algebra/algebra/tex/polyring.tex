@@ -1,0 +1,49 @@
+
+\begin{section}{Rings of Polynomials}
+
+Let $R$ be a ring and consider the set $R[x]$ consisting of polynomials (of {\bf indeterminant} $x$) with coefficients $a_{i} \in R$. We immediately expect that $R[x]$ is a subring of $R$ since we know from experience that adding and multiplying polynomials is well-defined and that $R[x]$ is closed under these operations. 
+
+\begin{danger}
+A quick aside on notation, we emphasize that $x$ is an ``indeterminant'' and not a ``variable'' since $x = 1$ does not necessarily make sense in any ring we may consider and we will simply write a polynomial (for example) as $x^2 + 5x - 2$ where we ``find the zeros'' of the (general) polynomial with coefficients from the (arbitrary) ring. This is a somewhat counterintuitive leap from ``solving the polynomial equation'' $x^2 + 5x - 2 = 0$ for the ``variable'' $x$, but it is necessary to adjust the point of view when constructing such a generalization.
+\end{danger}
+
+\begin{defn}
+Let $R$ be a ring. A {\bf polynomial} $f(x)$ {\bf with coefficients in} $R$ is an infinite formal sum
+$$\sum_{i = 0}^{\infty} a_{i}x^{i} = a_{0} + a_{1}x + \dots + a_{n}x^{n} + \dots,$$ 
+where $a_i \in R$ and $a_i = 0$ for all but a finite number of $i$ in the summation. The $a_{i}$ are {\bf coefficients} of $f(x)$.
+
+If for some $i \geq 0$ we have $a_{i} \neq 0$, then the largest such value of $i$ is the {\bf degree} of $f(x)$.
+\end{defn}
+
+\begin{thm}
+The set $R[x]$ of all polynomials in an indeterminant $x$ with coefficients in a ring $R$ is itself a ring under the addition and multiplication of polynomials. Further, if $R$ is a commutative ring, then so is $R[x]$, and if $R$ has unity $1 \neq 0$, then $1$ is also unity for $R[x]$.
+\end{thm}
+
+\begin{thm}
+Let $F \subset E$ be a subfield of $E$ and let $\alpha \in E$ be any element of $E$ and take $x$ to be indeterminant. Then the {\bf evaluation homomorphism} $\phi_{\alpha} \colon F[x] \to E$ defined by
+$$\phi_{\alpha}(a_{0} + a_{1}x + \dots + a_{n}x^{n}) = a_{0} + a_{1}\alpha + \dots + a_{n}\alpha^{n}$$ 
+for $(a_{0} + a_{1}x + \dots + a_{n}x^{n}) \in F[x]$ is a homomorphism of $F[x]$ into $E$.
+\end{thm}
+
+\begin{rmk}
+Note that $\phi_{\alpha}(x) = \alpha$ and the evaluation maps $F$ isomorphically into itself by the identity map $\phi_{\alpha}(a) = a$ for $a \in F$.
+\end{rmk}
+
+\begin{ex}
+Consider the evaluation homomorphism $\phi_{0} \colon \mathbb{Q}[x] \to \mathbb{R}$,
+$$\phi_{0}(a_{0} + a_{1}x + \dots + a_{n}x^{n}) = a_{0} + a_{1}0 + \dots + a_{n}0^{n} = a_{0}.$$
+Observe that $\phi_{0}$ sends every polynomial $f(x) \in \mathbb{Q}[x]$ to its constant term.
+\end{ex}
+
+\begin{ex}
+Consider the evaluation homomorphism $\phi_{i} \colon \mathbb{Q}[x] \to \mathbb{C}$,
+$$\phi_{i}(a_{0} + a_{1}x + \dots + a_{n}x^{n}) = a_{0} + a_{1}i + \dots + a_{n}i^{n}.$$
+Observe that $\phi_{i}(x) = i$ and $\phi_{i}(x^{2} + 1) = i^{2} + 1 = (-1) + 1 = 0$ which implies $f(x) = x^{2} + 1 \in \mathbb{Q}[x]$ is in the kernel $N$ of $\phi_{i}$.
+\end{ex}
+
+\begin{defn}
+Let $F \subset E$ be a subfield of $E$ with $\alpha \in E$, and consider the evaluation homomorphism $\phi_{\alpha} \colon F[x] \to E$ with $f(x) \in F[x]$. Then we may denote $f(x) = a_{0} + a_{1}x + \dots + a_{n}x^{n}$ under the evaluation $\phi_{\alpha}$ by $f(\alpha)$. That is,
+$$f(\alpha) = \phi_{\alpha}(f(x)) = a_{0} + a_{1}\alpha + \dots + a_{n}\alpha^{n}.$$
+If $f(\alpha) = 0$, then we say $\alpha$ is a {\bf zero} of $f(x)$.
+\end{defn}
+\end{section}

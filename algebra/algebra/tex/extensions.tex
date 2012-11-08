@@ -1,0 +1,50 @@
+
+\begin{section}{Algebraic Extensions}
+
+Recall that if $E$ is an extension field of $F$ and $\alpha \in E$ is algebraic over $F$, then every element of $F(\alpha)$ is algebraic over $F$. This relates to the zeros of polynomials $f \in F[x]$ in a fundamental way.
+
+\begin{defn}
+An extension field $E$ of $A$ is an {\bf algebraic extension} of $F$ if every element in $E$ is algebraic over $F$.
+\end{defn}
+
+\begin{defn}
+Let $E$ be an extension field over $F$ such that the dimension of $E$ (as a vector space) over $F$ is finite, then $E$ is a {\bf finite extension} of degree $[E \colon F] = n$ over $F$.
+\end{defn}
+
+\begin{danger}
+There is no requirement for $E$ to be a finite field, we only assert that $E$ is a finite {\em vector space} over $F$.
+\end{danger}
+
+\begin{prop}
+A finite extension field $E$ of $F$ is an algebraic extension of $F$.
+\end{prop}
+
+\begin{proof}
+  We must show that $\alpha \in E$ is algebraic over $F$. Recall that $[E \colon F] = n$ implies $$1, \alpha, \dots, \alpha^{n}$$ cannot be linearly independent. Then there exists $a_{i} \in F$ such that $$a_{n}\alpha^{n} + \dots + a_{1}\alpha + a_{0} = 0,$$ where not all $a_{i} = 0$. Hence, we have a nonzero polynomial $f(x) \in F[x]$ given by 
+$$f(x) = a_{n}x^{n} + \dots + a_{1}x + a_{0}$$ such that $f(\alpha) = 0$. Therefore, $\alpha$ is algebraic over $F$.
+\end{proof}
+
+\begin{thm}
+If $E$ is a finite extension of $F$, and $K$ is a finite extension of $E$, then $K$ is a finite extension of $F$ satisfying $$[K \colon F] = [K \colon E] [E \colon F].$$
+\end{thm}
+
+\begin{proof}
+Let $\mathfrak{A} = \{\alpha_{i} \colon i = 1, \dots, n\}$ be a basis for $E$ as a vector space over $F$ and let $\mathfrak{B} = \{\beta_{j} \colon j = 1, \dots, m\}$ be a basis for $K$ as a vector space over $E$. Then we claim that there are $nm$ elements (combinations of $\alpha_{i}\beta_{j}$) in the basis for $K$ as a vector space over $F$.
+
+Take any $\gamma \in K$, then we can write this element as a linear combination in terms of the basis $\mathfrak{B}$
+$$\gamma = \sum_{j=1}^{m}b_{j}\beta_{j},$$ for $b_{j} \in E$. 
+
+Since $\mathfrak{A}$ is a basis for $E$ over $F$ we can write any $b_{j}$ as a linear combination
+$$b_{j} = \sum_{i=1}^{n}a_{ij}\alpha_{i},$$ for $a_{ij} \in F$.
+
+Then $$\sum_{j=i}^{m} \Big (\sum_{i=1}^{n} a_{ij}\alpha{i} \Big ) \beta_{j} = \sum_{i,j=1}^{mn} a_{ij}(\alpha_{i}\beta{j}).$$
+
+Therefore, the $mn$ vectors $\alpha_{i}\beta_{j}$ span $K$ over $F$. It is straightforward to check for linear independence, since (for $c_{ij} \in F$) we can only have 
+$$\sum_{i=1}^{n}c_{ij}\alpha_{i} = 0$$ if $c_{ij} = 0$ for all $i,j$. The details are omitted here.
+\end{proof}
+
+\begin{prop}
+Let $E$ be an extension field of $F$ and suppose $\alpha \in E$ is algebraic over $F$ with $\beta \in F(\alpha)$. Then $\textrm{deg}(\beta, F)$ divides $\textrm{deg}(\alpha, F)$.
+\end{prop}
+
+\end{section} 

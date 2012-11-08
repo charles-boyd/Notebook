@@ -1,0 +1,59 @@
+\begin{section}{Fields of Quotients}
+
+We review the construction of a field $F$ from an integral domain $D$.
+
+\begin{rmk}
+Our motivating example here is the construction of the field $\mathbb{Q}$ from the integral domain $\mathbb{Z}$, since we have already observed that the only units in $\mathbb{Z}$ are $\{-1,1\}$ and therefore $\mathbb{Z}$ does not have a field structure. This is the notion of an integral domain``embedded'' in a field. 
+\end{rmk}
+
+\begin{prop}
+The field $F$ can be constructed from an integral domain $D$ according to the following process.
+\begin{enumerate}[(1)]
+\item Determine the elements of $F$.
+\begin{enumerate}[(a)] % BEGIN STEP 1
+\item We take the direct product of $D$ with itself to get the set of quotients
+$$D \times D = \{(a,b) \colon a,b \in D\}.$$
+\item To avoid division by zero\footnote{By analogy to $\mathbb{Z} \hookrightarrow \mathbb{Q}$, observe that the pair $(n,m)$ represents the ``formal quotient'' $n/m$. Then we want to exclude ordered pairs of the form $(a,0)$.} we take $$S = D \times D/\{0\} = \{(a,b) \colon a,b \in D \textrm{ and } b \neq 0\}.$$
+\item Now mod out\footnote{Continuing with the analogy to $\mathbb{Z} \hookrightarrow \mathbb{Q}$, note also that $(2,3) = (4,6)$.} by the equivalence\footnote{It is non-trivial to prove that this relation is transitive!} relation $(a,b) \sim (c,d) \iff ad = bc.$
+\item Then define the elements of $F$ to be the set of all equivalence classes $[(a,b)]$ for $(a,b) \in S$.
+\end{enumerate} % END STEP 1
+\item Define addition and multiplication for $F$.
+\begin{enumerate}[(a)] % BEGIN STEP 2
+\item Addition is well-defined for $[(a,b)]$ and $[(c,d)]$ in $F$, where
+$$[(a,b)] + [(c,d)] = [(ad + bc, bd)].$$
+\item Multiplication is well-defined for $[(a,b)]$ and $[(c,d)]$ in $F$, where
+$$[(a,b)][(c,d)] = [(ac, bd)].$$
+\item Note that $bd \neq 0$ since $D$ contains no divisors of zero by definition of an integral domain.
+\end{enumerate} %END STEP 2
+\item Check that the field axioms hold for $F$ under these operations.
+\begin{enumerate}[(a)] % BEGIN STEP 3
+\item Check that $F$ is an Abelian group under addition with additive identity $[(0,1)]$ and where $[(-a,b)]$ is the additive inverse for $[(a,b)]$.
+\item Check that the non-zero elements of $F$ form an Abelian group under multiplication, where $[(1,1)]$ is the muliplicative identity and $[(b,a)]$ is the multiplicative inverse for $[(a,b)]$ where $a \neq 0$ in $D$.
+\item Check that the distributive laws hold in $F$.
+\end{enumerate} %END STEP 3
+\item Show that $D \hookrightarrow F$ is an integral subdomain of the constructed field $F$.
+\begin{enumerate}[(a)] % BEGIN STEP 4
+\item Check that the morphism $\iota \colon D \to F$ defined by the function $\iota(a) = [(a,1)]$ is an isomorphism between $D$ and a subring of $F$.
+\item Check that $\iota(D)$ is a subdomain of $F$. That is, verify
+$$[(a,b)] = [(a,1)][(1,b)] = [(a,1)]/[(b,1)] = \iota(a)/\iota(b).$$
+\end{enumerate} %END STEP 4
+\end{enumerate}
+\end{prop}
+
+\begin{thm}
+Let $D$ be an integral domain and $F$ a field, then we can always construct an embedding $D \hookrightarrow F$ such that any element of $F$ can be expressed as a quotient of elements in $D$.
+\end{thm}
+
+\begin{prop}
+Every field $L$ containing an integral domain $D$ contains a subfield of quotients of $D$.
+\end{prop}
+
+\begin{prop}
+Any two fields of quotients of an integral domain $D$ are isomorphic to one another.
+\end{prop}
+
+\begin{thm}
+Let $F$ be a field of quotients of $D$ and let $L \supset D$ be a field. Then there exists an isomorphism $\psi \colon F \to L$ given by the function $\psi(a) = a$ for $a \in D$.
+\end{thm}
+
+\end{section}
